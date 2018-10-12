@@ -3,88 +3,105 @@
 <head>
 	<meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Marissa Castañeda</title>
+	<title>Marissa Reneé</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body>
-	<div class="navigation-bar">
-		<div class="row">
-			<div class="col-12 text-left">
-				<h1 id="marissa">Marissa Castañeda</h1>
-        <div id="menu-container">
-          <img onclick="toggleNavList()" src="img/menu.png" id="menu"/>
-        </div>
-        <h4 id="hp-title">Holistic Practitioner</h4>
+	<div id="bodybody">
+		<div class="navigation-bar">
+			<div class="row">
+				<div class="col-12">
+					<div class="title-cont">
+						<h1 id="marissa">Marissa Reneé</h1>
+						<h4 id="hp-title">Holistic Practitioner</h4>
+					</div>
+
+					<div id="social-handles">
+						<ul class="social-list">
+							<li><img src="img/twit.png" class="handle"/> MAMADELEGEND</li>
+							<li><img src="img/ig.png" class="handle"/> MAMADELEGEND</li>
+						</ul>
+					</div>
+					<div id="menu-container">
+						<img onclick="toggleNavList()" src="img/menu.png" id="menu"/>
+					</div>
+				</div>
 			</div>
 		</div>
-	</div>
-	<div id="nav-list-container">
-		<ul class="nav-list">
-			<li class="nav-list-li">
-				<a class="navigation-link" onclick="displayAbout()">About</a>
-			</li>
-			<li class="nav-list-li">
-				<a class="navigation-link" onclick="displayMyWork()">My Work</a>
-			</li>
-			<li class="nav-list-li">
-				<a class="navigation-link" onclick="displaySchedule()">Schedule</a>
-			</li>
-			<li class="nav-list-li">
-				<a class="navigation-link" onclick="displayContact()">Contact</a>
-			</li>
-		</ul>
-	</div>
-	<div id="midpage-content">
-		<div class="info-left">
-			<div id="gets-title">
-				<h1 id="temp">temp</h1>
+		<div id="nav-list-container">
+			<ul class="nav-list">
+				<li class="nav-list-li">
+					<a class="navigation-link" onclick="displayAbout()">About</a>
+				</li>
+				<li class="nav-list-li">
+					<a class="navigation-link" onclick="displayMyWork()">My Work</a>
+				</li>
+				<li class="nav-list-li">
+					<a class="navigation-link" onclick="displaySchedule()">Schedule</a>
+				</li>
+				<li class="nav-list-li">
+					<a class="navigation-link" onclick="displayResources()">Resources</a>
+				</li>
+			</ul>
+		</div>
+		<div id="midpage-content">
+			<div class="info-left">
+				<div id="gets-title">
+					<h1 id="temp">temp</h1>
+				</div>
+				<div id="gets-details"></div>
 			</div>
-			<div id="gets-details"></div>
+			<div id="midpage-internal">
+	      <div class="circle-container">
+	        <img src="img/fires.png" alt="fire" class="center-ele"/>
+	        <a class="el1" onclick="changeElement('water', this)">
+	          <img src="img/waters.png" alt="water" class="outer-element"/>
+	        </a>
+	        <a class="el2" onclick="changeElement('air', this)">
+	          <img src="img/airs.png" alt="air" class="outer-element"/>
+	        </a>
+	        <a class="el3" onclick="changeElement('earth', this)">
+	          <img src="img/earths.png" alt="earth" class="outer-element"/>
+	        </a>
+					<a class="el4" onclick="changeElement('space', this)">
+						<img src="img/spaces.png" alt="space" class="outer-element"/>
+					</a>
+	      </div>
+			</div>
+			<div class="info-right">
+				<div id="gets-el-title"></div>
+				<div id="gets-el-info"></div>
+			</div>
 		</div>
-		<div id="midpage-internal">
-      <div class="circle-container">
-        <img src="img/fires.png" alt="fire" class="center-ele"/>
-        <a class="el1" onclick="changeElement('water', this)">
-          <img src="img/waters.png" alt="water" class="outer-element"/>
-        </a>
-        <a class="el2" onclick="changeElement('air', this)">
-          <img src="img/airs.png" alt="air" class="outer-element"/>
-        </a>
-        <a class="el3" onclick="changeElement('earth', this)">
-          <img src="img/earths.png" alt="earth" class="outer-element"/>
-        </a>
-      </div>
+
+
+	  <div id="nav-list-container-bottom">
+	    <ul class="nav-list-btm">
+	      <li class="nav-list-li-btm">
+	        <a class="navigation-link" onclick="displayAbout()">About</a>
+	      </li>
+	      <li class="nav-list-li-btm">
+	        <a class="navigation-link" onclick="displayMyWork()">My Work</a>
+	      </li>
+	      <li class="nav-list-li-btm">
+	        <a class="navigation-link" onclick="displaySchedule()">Schedule</a>
+	      </li>
+				<li class="nav-list-li-btm">
+					<a class="navigation-link" onclick="displayContact()">Contact</a>
+				</li>
+				<li class="nav-list-li-btm">
+	        <a class="navigation-link" onclick="displayResources()">Resources</a>
+	      </li>
+	    </ul>
+	  </div>
+		<div id="modal">
+			<button id="close" onclick="exitModal()">X</button>
+			<div id="modal-inner"></div>
 		</div>
-		<div class="info-right">
-			<div id="gets-el-title"></div>
-			<div id="gets-el-info"></div>
-		</div>
+
 	</div>
-
-
-  <div id="nav-list-container-bottom">
-    <ul class="nav-list-btm">
-      <li class="nav-list-li-btm">
-        <a class="navigation-link" onclick="displayAbout()">About</a>
-      </li>
-      <li class="nav-list-li-btm">
-        <a class="navigation-link" onclick="displayMyWork()">My Work</a>
-      </li>
-      <li class="nav-list-li-btm">
-        <a class="navigation-link" onclick="displaySchedule()">Schedule</a>
-      </li>
-      <li class="nav-list-li-btm">
-        <a class="navigation-link" onclick="displayContact()">Contact</a>
-      </li>
-    </ul>
-  </div>
-	<div id="modal">
-		<button id="close" onclick="exitModal()">X</button>
-		<div id="modal-inner"></div>
-	</div>
-
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	<script type="text/javascript" src="behaviour.js"></script>
