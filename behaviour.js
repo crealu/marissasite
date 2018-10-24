@@ -2,8 +2,12 @@ function toggleNavList() {
   let navList = document.getElementById('nav-list-container');
   if (!(navList.style.left === '0px')) {
     navList.style.left = '0px';
+    navList.style.display = 'block';
+    navList.style.opacity = '1';
   } else {
       navList.style.left = '110px';
+      navList.style.display = 'none';
+      navList.style.opacity = '0';
   }
 }
 
@@ -47,7 +51,7 @@ function displayContentsMain(titleCase) {
       break;
 
     case 'Contact':
-      dT = "Reach out share a wellness goal.";
+      dT = "Reach out to share a wellness goal.";
       detailsText = document.createTextNode(dT);
       break;
 
@@ -63,10 +67,18 @@ function displayContentsMain(titleCase) {
   details.appendChild(detailsText);
   detailsHere.appendChild(details);
   let infoLeft = document.getElementsByClassName('info-left')[0];
-  infoLeft.style.width = '35%';
   let circleContainer = document.getElementsByClassName('circle-container')[0];
-  circleContainer.style.transform = 'scale(0.8)';
-  //circleContianer.style.top = '-10px';
+  let docBody = document.body;
+  let docBodyWidth = getStyleValue(docBody, 'width');
+  let cleanDBW = parseInt(docBodyWidth.replace('px', ""));
+  if (cleanDBW >= 900) {
+    infoLeft.style.width = '35%';
+    circleContainer.style.transform = 'scale(0.75)';
+    console.log(cleanDBW);
+  } else if (cleanDBW <= 900 && cleanDBW >= 400) {
+    infoLeft.style.width = '100%';
+    circleContainer.style.transform = 'scale(0.5)';
+  }
 
   return([titleHere, detailsHere]);
 }
@@ -75,9 +87,9 @@ function displayAbout() {
   let mainArray = displayContentsMain('About');
   mainArray;
 
-  let check = 'Check out her <a href="https://www.youtube.com/channel/UCG47NLyWHWd9j31EmQupCVQ?view_as=subscriber" target="_blank">Youtube channel</a> to learn more about Ayurveda';
+  //let check = 'Check out her <a href="https://www.youtube.com/channel/UCG47NLyWHWd9j31EmQupCVQ?view_as=subscriber" target="_blank">Youtube channel</a> to learn more about Ayurveda';
 
-  mainArray[1].innerHTML += (check);
+  //mainArray[1].innerHTML += (check);
 
   mainArray[0].style.animation = 'beseen 1s forwards';
   mainArray[1].style.animation = 'beseen 1s forwards';
@@ -139,7 +151,6 @@ function workContent() {
 
   var myWorkTabs = [
     ['Assessment', "Discover your body type! Let's figure out which areas of wellness and lifestyle need the most attention. This assessment will give you a clear outline of your current state of wellbeing. The Ancients believed that every bodily system is interconnected, meaning if one is out of balance, there's likely an imbalance in another system. Together, with the knowledge of the Ancients, we can determine the current state of wellness and begin with small action steps that promote complete balance. Don't worry though, the path to balance is gentle."],
-
     ['Customized Weight Protocol', "Weight loss is not only running on the treadmill or counting calories. Utilize my weight loss protocol and discover the delicious foods that could assist in weight loss and an improved metabolism. This protocol comes with a meal plan, recipe support, weekly coaching, and a full day's routine to promote weight loss. *please ask about fitness support*"],
     ['Customized Meal Plan', 'This meal plan goes hand in hand with the outcome of your assessment. Upon determining your body type and current state, I will take another assessment on your food preferences and build you a customized plan based on your goals (weight loss, increased energy, low sugar, etc). This comes with the meal plan, grocery shopping and recipe support.'],
     ['Customized Supplement Plan', 'Each customized supplement plan comes with an assessment and the top 10 supplements I believe could assist you with your goals and support with choosing which brands are best.'],
@@ -175,13 +186,13 @@ function expandWorkContent(t) {
   let cHeight = style.getPropertyValue('height');
   let para = document.getElementsByClassName('my-work-c-para')[t];
   let newH = getStyleValue(para, 'height');
-  if (cHeight == '260px') {
+  if (cHeight == '280px') {
     container.style.height = 'calc(30px + 10px)';
     setTimeout(function(){ para.style.display = 'none'; }, 250);
     setTimeout(function(){ para.style.opacity = '0'; }, 0);
   } else {
     setTimeout(function(){ para.style.display = 'block'; }, 250);
-    container.style.height = '260px';
+    container.style.height = '280px';
     setTimeout(function(){ para.style.opacity = '1'; }, 300);
   }
 }
@@ -207,6 +218,7 @@ function contactContent() {
   let textBox = document.createElement("textarea");
   let contactForm = document.createElement("div");
   let formUL = document.createElement("ul");
+  formUL.setAttribute("id", "contact-ul");
 
   let inputs = [nameInp, emailInp, cityInp, textBox];
 

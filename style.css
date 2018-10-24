@@ -22,6 +22,7 @@ body {
   -o-background-size: cover;
   background-size: cover;
   transition: 1s;
+  font-family: 'Jura';
 }
 
 .navigation-bar {
@@ -34,7 +35,7 @@ body {
   padding-left: 20px;
   float: left;
   width: 100%;
-  font-family: 'Unica One';
+  letter-spacing: 5px;
 }
 
 #hp-title {
@@ -43,19 +44,30 @@ body {
   top: -10px;
   font-family: 'Jura';
   width: 100%;
+  font-size: 20px;
 }
 
 .title-cont {
-  width: 82%;
+  width: 77%;
   position: relative;
   float: left;
 }
 
-#social-handles {
+.social-handles {
   position: relative;
   float: left;
-  width: 15%;
+  width: 20%;
   font-family: 'Jura';
+}
+
+@media (max-width: 1200px) and (min-width: 801px) {
+  .title-cont {
+    width: 72%;
+  }
+
+  .social-handles {
+    width: 25%;
+  }
 }
 
 .social-list li {
@@ -73,14 +85,17 @@ body {
   position: relative;
   float: left;
   display: none;
+  top: 10px;
 }
+
 #menu {
   display: none;
   z-index: 50;
+  cursor: pointer;
 }
 
 
-@media (max-width: 750px) and (min-width: 250px) {
+@media (max-width: 800px) and (min-width: 300px) {
   #menu {
     display: block;
     position: relative;
@@ -94,12 +109,19 @@ body {
     display: block;
   }
 
+  .title-cont {
+    width: 82%;
+  }
 
   #marissa {
     width: 90%;
   }
 
-  #social-handles {
+  .social-handles {
+    display: none;
+  }
+
+  #nav-list-container-bottom {
     display: none;
   }
 }
@@ -108,10 +130,11 @@ body {
   position: relative;
   float: right;
   padding-right: 10px;
-  display: block;
-  transition: 0.5s ease-out;
+  transition: 0.5s opacity ease, left ease;
   left: 110px;
   display: none;
+  z-index: 150;
+  opacity: 0;
 }
 
 .nav-list {
@@ -149,7 +172,7 @@ body {
 
 #midpage-content {
   position: relative;
-  top: 25px;
+  top: 15px;
 }
 
 #temp {
@@ -163,14 +186,6 @@ body {
   padding-left: 40px;
   z-index: 100;
   transition: 0.5s;
-}
-
-#gets-title {
-  font-family: 'Unica One';
-}
-
-#gets-details {
-  font-family: 'Jura';
 }
 
 #midpage-internal {
@@ -191,6 +206,51 @@ body {
   font-family: 'Jura';
 }
 
+@media (max-width: 800px) and (min-width: 300px) {
+  body {
+    overflow-y: scroll;
+  }
+
+  .info-left {
+    width: 100%;
+    float: none;
+    display: block;
+    margin: 0 auto;
+  }
+
+  #midpage-internal {
+    width: 100%;
+    float: none;
+    display: block;
+    margin: 0 auto;
+    top: 0px;
+    height: 400px;
+  }
+
+  .info-right {
+    width: 100%;
+    float: none;
+    display: block;
+    margin: 0 auto;
+    padding: 10px;
+    text-align: center;
+  }
+  .current-title {
+    width: 100%;
+  }
+  #gets-details p {
+    width: 100%;
+  }
+}
+
+#gets-title {
+  font-family: 'Jura';
+}
+
+#gets-details {
+  font-family: 'Jura';
+}
+
 .circle-container {
 	position: relative;
 	width: 30em;
@@ -200,6 +260,7 @@ body {
 	border-radius: 50%;
 	margin: 1.75em auto 0;
   transition: 0.5s;
+  transform: scale(0.9);
 }
 
 .circle-container a {
@@ -225,9 +286,9 @@ body {
   transform: scale(1.125);
 }
 
-@media (max-width: 800px) and (min-width: 600px) {
+@media (max-width: 850px) and (min-width: 600px) {
   .circle-container {
-    transform: scale(0.75);
+    transform: scale(0.7);
   }
 }
 
@@ -271,18 +332,6 @@ body {
   -webkit-transition: 0.25s;
 }
 
-@media (max-width: 900px) and (min-width: 300px) {
-  #midpage-content {
-    top: 75px;
-  }
-}
-
-@media (max-width: 650px) and (min-width: 300px) {
-  #midpage-internal {
-    width: 100%;
-  }
-}
-
 #nav-list-container-bottom {
   position: fixed;
   display: block;
@@ -291,6 +340,12 @@ body {
   bottom: 0px;
   padding-bottom: 30px;
   text-align: center;
+}
+
+@media (max-width: 800px) and (min-width: 300px) {
+  #nav-list-container-bottom {
+    display: none;
+  }
 }
 
 .nav-list-btm {
@@ -347,11 +402,12 @@ body {
 }
 
 .my-work-c-para {
-  width: 100%;
+  width: 450px;;
   position: relative;
   transition: opacity 0.25s;
   display: none;
   opacity: 0;
+  padding-left: 10px;
 }
 
 .my-work-c-div {
@@ -378,7 +434,8 @@ body {
 .contact-li {
   padding: 8px;
   list-style-type: none;
-  left: -40px;
+  left: -45px;
+  position: relative;
 }
 
 @keyframes expand {
