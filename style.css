@@ -60,6 +60,15 @@ body {
   font-family: 'Jura';
 }
 
+.social-list a {
+  color: white;
+  text-decoration: none;
+}
+
+.social-list a:hover {
+  cursor: pointer;
+}
+
 @media (max-width: 1200px) and (min-width: 801px) {
   .title-cont {
     width: 72%;
@@ -70,7 +79,7 @@ body {
   }
 }
 
-.social-list li {
+.social-list a li {
   font-size: 16px;
   list-style-type: none;
 }

@@ -45,7 +45,7 @@ function displayContentsMain(titleCase) {
       break;
 
     case 'Schedule':
-      dT = "To schedule a one on one assessment, please leave your email in the space provided. I will contact you within 24 hours to schedule a session.";
+      dT = "To schedule a one on one assessment, please leave your email in the space provided under the Contacts tab. I will contact you within 24 hours to schedule a session.";
       detailsText = document.createTextNode(dT);
       title.classList.add('software-title');
       break;
